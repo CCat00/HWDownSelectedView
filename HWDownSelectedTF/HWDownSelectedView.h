@@ -23,7 +23,6 @@
 
 @property (nonatomic, strong) NSArray<NSString *> *listArray;
 
-@property (nonatomic, assign) BOOL beShowArrowImgView;
 
 @property (nonatomic, copy) NSString *arrowImgViewName;
 
@@ -33,6 +32,10 @@
 @property (nonatomic, strong) UIColor *textColor;
 
 @property (nonatomic, assign) NSTextAlignment textAlignment;
+
+@property (nonatomic, copy) NSString *placeholder;
+
+@property (nonatomic, copy, readonly) NSString *text;
 
 
 - (void)show;

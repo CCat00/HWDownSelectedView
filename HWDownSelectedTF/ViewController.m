@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet HWDownSelectedView *sexBox;
+
 @property (nonatomic, weak) HWDownSelectedView *down;
 @end
 
@@ -24,11 +26,16 @@
     /// text
     
     
+    
     HWDownSelectedView *down = [HWDownSelectedView new];
-    down.listArray = @[@"哈哈哈",@"呵呵呵呵呵呵", @"我擦擦擦擦",@"12",@"34", @"56",@"12",@"34", @"56"];
+    
+    down.listArray = @[@"选择项1",@"选择项2", @"选择项3",@"选择项4",@"选择项5", @"选择项6",@"选择项7",@"选择项8", @"选择项9"];
     down.frame = CGRectMake(10, 100, 300, 30);
     [self.view addSubview:down];
     self.down = down;
+    
+    _sexBox.placeholder = @"性别选择";
+    _sexBox.listArray = @[@"男", @"女"];
 }
 
 

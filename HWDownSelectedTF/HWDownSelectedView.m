@@ -8,20 +8,22 @@
 
 #import "HWDownSelectedView.h"
 
-/// 箭头图片的宽度
-CGFloat const ArrowImgViewWidth = 30.f;
-
 /// 动画的时间
-NSTimeInterval const animationDuration = .2f;
+NSTimeInterval const animationDuration = 0.2f;
 
 /// 分割线的颜色
 #define kLineColor [UIColor colorWithRed:219/255.0 green:217/255.0 blue:216/255.0 alpha:1]
 
+CGFloat angleValue(CGFloat angle) {
+    return (angle * M_PI) / 180;
+}
+
 @interface HWDownSelectedView () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UILabel *contentLabel;
+@property (nonatomic, strong) UITextField *contentLabel;
 @property (nonatomic, strong) UIButton *clickBtn;
 @property (nonatomic, strong) UIImageView *arrowImgView;
+@property (nonatomic, strong) UIView *arrowImgBgView;
 @property (nonatomic, strong) UITableView *listTableView;
 @property (nonatomic, assign) BOOL isOpen;
 /// 执行打开关闭动画是否结束
@@ -31,17 +33,12 @@ NSTimeInterval const animationDuration = .2f;
 
 @implementation HWDownSelectedView
 
-
-CGFloat angleValue(CGFloat angle) {
-    return (angle * M_PI) / 180;
-}
-
 #pragma mark - life cycle 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self _setup];
+        [self _commintInit];
     }
     return self;
 }
@@ -50,34 +47,20 @@ CGFloat angleValue(CGFloat angle) {
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self _setup];
+        [self _commintInit];
     }
     return self;
 }
 
-#pragma mark - overwrite
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-}
-
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:frame];
-    
-    [self _setupFrame];
-}
-
 #pragma mark - private
-- (void)_setup
+- (void)_commintInit
 {
     /// 默认设置
+    self.backgroundColor = [UIColor whiteColor];
+    
     _font = [UIFont systemFontOfSize:14.f];
     _textColor = [UIColor blackColor];
     _textAlignment = NSTextAlignmentLeft;
-    _arrowImgViewName = @"xiaolian.png";
-    
-    self.backgroundColor = [UIColor whiteColor];
     
     /// 默认不展开
     _isOpen = NO;
@@ -85,46 +68,19 @@ CGFloat angleValue(CGFloat angle) {
     /// 默认是完成动画的
     _beDone = YES;
     
-    /// 默认显示下拉箭头
-    _beShowArrowImgView = YES;
-    
     /// 初始化UI
+    [self.arrowImgBgView addSubview:self.arrowImgView];
+    [self addSubview:self.arrowImgBgView];
     [self addSubview:self.contentLabel];
-    [self addSubview:self.arrowImgView];
     [self addSubview:self.clickBtn];
     
-    /// 设置位置
-    [self _setupFrame];
-}
-
-- (void)_setupFrame
-{
-    CGFloat SELFWIDTH, SELFHEIGHT;
-    SELFWIDTH = self.frame.size.width;
-    SELFHEIGHT = self.frame.size.height;
-    
-    /// 箭头 和 文本
-    if (_beShowArrowImgView) {
-        self.arrowImgView.frame = CGRectMake(SELFWIDTH - ArrowImgViewWidth, 0.0f, ArrowImgViewWidth, SELFHEIGHT);
-        self.contentLabel.frame = CGRectMake(5, 2, SELFWIDTH - ArrowImgViewWidth - 10, SELFHEIGHT-4);
-    } else {
-        self.arrowImgView.frame = CGRectZero;
-        self.contentLabel.frame = CGRectMake(5, 2, SELFWIDTH - 10, SELFHEIGHT-4);
-    }
-    
-    /// 按钮
-    self.clickBtn.frame = CGRectMake(0, 0, SELFWIDTH, SELFHEIGHT);
-    
-    /// 列表视图
-    self.listTableView.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y + SELFHEIGHT, SELFWIDTH, 0);
-    
-    self.listTableView.rowHeight = SELFHEIGHT;
-
 }
 
 #pragma mark - action
 - (void)clickBtnClicked
 {
+    //NSLog(@"btn clicked");
+    
     if (!_beDone) return;
     
     /// 关闭页面上其他下拉控件
@@ -151,6 +107,13 @@ CGFloat angleValue(CGFloat angle) {
 
     _beDone = NO;
     
+    [self.superview addSubview:self.listTableView];
+    /// 避免被其他子视图遮盖住
+    [self.superview bringSubviewToFront:self.listTableView];
+    CGRect frame = CGRectMake(CGRectGetMinX(self.frame), CGRectGetMaxY(self.frame), CGRectGetWidth(self.frame), 0);
+    [self.listTableView setFrame:frame];
+    self.listTableView.rowHeight = CGRectGetHeight(self.frame);
+    
     [UIView animateWithDuration:animationDuration
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseOut
@@ -161,9 +124,6 @@ CGFloat angleValue(CGFloat angle) {
                                                        atScrollPosition:UITableViewScrollPositionTop
                                                                animated:YES];
                          }
-                         [self.superview addSubview:self.listTableView];
-                         /// 避免被其他子视图遮盖住
-                         [self.superview bringSubviewToFront:self.listTableView];
                          
                          CGRect frame = self.listTableView.frame;
                          NSInteger count = MIN(4, self.listArray.count);
@@ -175,10 +135,7 @@ CGFloat angleValue(CGFloat angle) {
                          }
                          [self.listTableView setFrame:frame];
                          
-                         /// 旋转箭头
-                         if (_beShowArrowImgView) {
-                             self.arrowImgView.transform = CGAffineTransformRotate(self.arrowImgView.transform, angleValue(180));
-                         }
+                         self.arrowImgView.transform = CGAffineTransformIdentity;
                      }
                      completion:^(BOOL finished) {
 
@@ -204,13 +161,11 @@ CGFloat angleValue(CGFloat angle) {
                          frame.size.height = 0.f;
                          [self.listTableView setFrame:frame];
                          
-                         /// 旋转箭头
-                         if (_beShowArrowImgView) {
-                             self.arrowImgView.transform = CGAffineTransformRotate(self.arrowImgView.transform, angleValue(180));
-                         }
+                         self.arrowImgView.transform = CGAffineTransformRotate(self.arrowImgView.transform, angleValue(-180));
                      }
                      completion:^(BOOL finished) {
                          
+                         [self.listTableView setContentOffset:CGPointZero animated:NO];
                          if (self.listTableView.superview) [self.listTableView removeFromSuperview];
                          
                          _beDone = YES;
@@ -274,7 +229,8 @@ CGFloat angleValue(CGFloat angle) {
 }
 
 
-#pragma mark - setter
+#pragma mark - Public
+
 - (void)setFont:(UIFont *)font
 {
     _font = font;
@@ -293,10 +249,9 @@ CGFloat angleValue(CGFloat angle) {
     self.contentLabel.textAlignment = textAlignment;
 }
 
-- (void)setBeShowArrowImgView:(BOOL)beShowArrowImgView
+- (void)setPlaceholder:(NSString *)placeholder
 {
-    _beShowArrowImgView = beShowArrowImgView;
-    [self _setupFrame];
+    self.contentLabel.placeholder = placeholder;
 }
 
 - (void)setListArray:(NSArray *)listArray
@@ -306,15 +261,22 @@ CGFloat angleValue(CGFloat angle) {
     [self.listTableView reloadData];
 }
 
+- (NSString *)text
+{
+    return self.contentLabel.text;
+}
+
 #pragma mark - getter
-- (UILabel *)contentLabel
+
+- (UITextField *)contentLabel
 {
     if (!_contentLabel) {
-        _contentLabel = [UILabel new];
+        _contentLabel = [UITextField new];
+        _contentLabel.placeholder = @"下拉可选择内容";
+        _contentLabel.enabled = NO;
         _contentLabel.backgroundColor = [UIColor clearColor];
         _contentLabel.textColor = _textColor;
         _contentLabel.font = _font;
-        _contentLabel.numberOfLines = 1;
         _contentLabel.textAlignment = _textAlignment;
     }
     return _contentLabel;
@@ -335,15 +297,26 @@ CGFloat angleValue(CGFloat angle) {
 {
     if (!_arrowImgView) {
         _arrowImgView = [UIImageView new];
+        _arrowImgView.image = [UIImage imageNamed:@"arrow_up.png"];
+        _arrowImgView.transform = CGAffineTransformRotate(self.arrowImgView.transform, angleValue(-180));
     }
-    _arrowImgView.image = [UIImage imageNamed:_arrowImgViewName];
     return _arrowImgView;
+}
+
+- (UIView *)arrowImgBgView
+{
+    if (!_arrowImgBgView) {
+        _arrowImgBgView = [[UIView alloc] initWithFrame:CGRectZero];
+        _arrowImgBgView.backgroundColor = [UIColor clearColor];
+    }
+    return _arrowImgBgView;
 }
 
 - (UITableView *)listTableView
 {
     if (!_listTableView) {
         _listTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _listTableView.scrollsToTop = NO;
         _listTableView.bounces = NO;
         _listTableView.dataSource = self;
         _listTableView.delegate = self;
@@ -352,4 +325,130 @@ CGFloat angleValue(CGFloat angle) {
     }
     return _listTableView;
 }
+
+#pragma mark - Layout
+
+- (void)updateConstraints
+{
+    //NSLog(@"updateConstraints");
+    
+    // 箭头
+    self.arrowImgView.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[
+                                              [NSLayoutConstraint constraintWithItem:self.arrowImgView
+                                                                           attribute:NSLayoutAttributeCenterX
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.arrowImgBgView
+                                                                           attribute:NSLayoutAttributeCenterX
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self.arrowImgView
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.arrowImgBgView
+                                                                           attribute:NSLayoutAttributeCenterY
+                                                                          multiplier:1.0
+                                                                            constant:0.0]
+                                              ]];
+    
+    self.arrowImgBgView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [NSLayoutConstraint activateConstraints:@[
+                                              [NSLayoutConstraint constraintWithItem:self
+                                                                           attribute:NSLayoutAttributeRight
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.arrowImgBgView
+                                                                           attribute:NSLayoutAttributeRight
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self
+                                                                           attribute:NSLayoutAttributeTop
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.arrowImgBgView
+                                                                           attribute:NSLayoutAttributeTop
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.arrowImgBgView
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self.arrowImgBgView
+                                                                           attribute:NSLayoutAttributeWidth
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:nil
+                                                                           attribute:NSLayoutAttributeNotAnAttribute
+                                                                          multiplier:1.0
+                                                                            constant:30]
+                                              ]];
+    
+    // 内容label
+    self.contentLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[
+                                              [NSLayoutConstraint constraintWithItem:self.contentLabel
+                                                                           attribute:NSLayoutAttributeLeft
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self
+                                                                           attribute:NSLayoutAttributeLeft
+                                                                          multiplier:1.0
+                                                                            constant:5.0],
+                                              [NSLayoutConstraint constraintWithItem:self.contentLabel
+                                                                           attribute:NSLayoutAttributeTop
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self
+                                                                           attribute:NSLayoutAttributeTop
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self.contentLabel
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self.contentLabel
+                                                                           attribute:NSLayoutAttributeRight
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self.arrowImgBgView
+                                                                           attribute:NSLayoutAttributeLeft
+                                                                          multiplier:1.0
+                                                                            constant:0.0]
+                                              ]];
+    
+    self.clickBtn.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[
+                                              [NSLayoutConstraint constraintWithItem:self.clickBtn
+                                                                           attribute:NSLayoutAttributeLeft
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self
+                                                                           attribute:NSLayoutAttributeLeft
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self.clickBtn
+                                                                           attribute:NSLayoutAttributeTop
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self
+                                                                           attribute:NSLayoutAttributeTop
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self.clickBtn
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self
+                                                                           attribute:NSLayoutAttributeBottom
+                                                                          multiplier:1.0
+                                                                            constant:0.0],
+                                              [NSLayoutConstraint constraintWithItem:self.clickBtn
+                                                                           attribute:NSLayoutAttributeRight
+                                                                           relatedBy:NSLayoutRelationEqual
+                                                                              toItem:self
+                                                                           attribute:NSLayoutAttributeRight
+                                                                          multiplier:1.0
+                                                                            constant:0.0]
+                                              ]];
+    [super updateConstraints];
+}
+
 @end

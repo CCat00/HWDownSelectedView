@@ -14,6 +14,7 @@
 		68C582E71C2003C800A1F776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C582E61C2003C800A1F776 /* Assets.xcassets */; };
 		68C582EA1C2003C800A1F776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C582E81C2003C800A1F776 /* LaunchScreen.storyboard */; };
 		68C582F61C20050100A1F776 /* HWDownSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C582F51C20050100A1F776 /* HWDownSelectedView.m */; };
+		68CCD4C81DD2D1F5004AF803 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68CCD4C71DD2D1F5004AF803 /* arrow_up@2x.png */; };
 		68FE85131C201D38008365C2 /* xiaolian.png in Resources */ = {isa = PBXBuildFile; fileRef = 68FE85121C201D38008365C2 /* xiaolian.png */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		68C582EB1C2003C800A1F776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68C582F41C20050100A1F776 /* HWDownSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDownSelectedView.h; sourceTree = "<group>"; };
 		68C582F51C20050100A1F776 /* HWDownSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDownSelectedView.m; sourceTree = "<group>"; };
+		68CCD4C71DD2D1F5004AF803 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
+		68E638371DD32A0900B123A6 /* HWDownSelectedProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDownSelectedProtocol.h; sourceTree = "<group>"; };
 		68FE85121C201D38008365C2 /* xiaolian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaolian.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +66,9 @@
 		68C582D91C2003C800A1F776 /* HWDownSelectedTF */ = {
 			isa = PBXGroup;
 			children = (
+				68CCD4C71DD2D1F5004AF803 /* arrow_up@2x.png */,
 				68C582F41C20050100A1F776 /* HWDownSelectedView.h */,
+				68E638371DD32A0900B123A6 /* HWDownSelectedProtocol.h */,
 				68C582F51C20050100A1F776 /* HWDownSelectedView.m */,
 				68C582DD1C2003C800A1F776 /* AppDelegate.h */,
 				68C582DE1C2003C800A1F776 /* AppDelegate.m */,
@@ -145,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68CCD4C81DD2D1F5004AF803 /* arrow_up@2x.png in Resources */,
 				68C582EA1C2003C800A1F776 /* LaunchScreen.storyboard in Resources */,
 				68C582E71C2003C800A1F776 /* Assets.xcassets in Resources */,
 				68C582E51C2003C800A1F776 /* Main.storyboard in Resources */,
@@ -273,7 +279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HWDownSelectedTF/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andlisoft.HWDownSelectedTF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HWDownSelectedTF/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andlisoft.HWDownSelectedTF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
