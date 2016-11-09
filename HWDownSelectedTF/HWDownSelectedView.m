@@ -56,7 +56,7 @@ CGFloat angleValue(CGFloat angle) {
 - (void)_commintInit
 {
     /// 默认设置
-    self.backgroundColor = [UIColor whiteColor];
+    //self.backgroundColor = [UIColor whiteColor];
     
     _font = [UIFont systemFontOfSize:14.f];
     _textColor = [UIColor blackColor];
@@ -272,7 +272,7 @@ CGFloat angleValue(CGFloat angle) {
 {
     if (!_contentLabel) {
         _contentLabel = [UITextField new];
-        _contentLabel.placeholder = @"下拉可选择内容";
+        _contentLabel.placeholder = @"点击进行选择";
         _contentLabel.enabled = NO;
         _contentLabel.backgroundColor = [UIColor clearColor];
         _contentLabel.textColor = _textColor;
@@ -286,6 +286,7 @@ CGFloat angleValue(CGFloat angle) {
 {
     if (!_clickBtn) {
         _clickBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _clickBtn.backgroundColor = [UIColor clearColor];
         _clickBtn.layer.borderColor = kLineColor.CGColor;
         _clickBtn.layer.borderWidth = 0.5f;
         [_clickBtn addTarget:self action:@selector(clickBtnClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -316,6 +317,8 @@ CGFloat angleValue(CGFloat angle) {
 {
     if (!_listTableView) {
         _listTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _listTableView.layer.borderWidth = 0.5;
+        _listTableView.layer.borderColor = kLineColor.CGColor;
         _listTableView.scrollsToTop = NO;
         _listTableView.bounces = NO;
         _listTableView.dataSource = self;

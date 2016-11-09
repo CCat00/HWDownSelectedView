@@ -28,21 +28,32 @@
                                     <constraint firstAttribute="height" constant="40" id="VFs-Tm-W5u"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPs-en-CGF" customClass="HWDownSelectedView">
+                                <rect key="frame" x="30" y="160" width="260" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zhP-fB-C9n"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="B2J-Qg-2sb" firstAttribute="top" secondItem="qPs-en-CGF" secondAttribute="bottom" constant="20" id="2UM-0U-Kk5"/>
+                            <constraint firstItem="qPs-en-CGF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A17-r8-OAk"/>
                             <constraint firstItem="B2J-Qg-2sb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cEp-ae-g9p"/>
                             <constraint firstItem="B2J-Qg-2sb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="cIg-9c-Oeq"/>
                             <constraint firstItem="B2J-Qg-2sb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oea-fZ-ct6"/>
+                            <constraint firstItem="qPs-en-CGF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="tA7-i5-69c"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ageBox" destination="qPs-en-CGF" id="zcc-Xi-j0d"/>
                         <outlet property="sexBox" destination="B2J-Qg-2sb" id="cOa-Fk-BOM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.625" y="137.5"/>
+            <point key="canvasLocation" x="-240" y="128"/>
         </scene>
     </scenes>
 </document>

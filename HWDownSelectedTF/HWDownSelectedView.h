@@ -18,28 +18,19 @@
 
 @interface HWDownSelectedView : UIView
 
-/// 数据
 @property (nonatomic, weak) id <HWDownSelectedViewDelegate> delegate;
-
 @property (nonatomic, strong) NSArray<NSString *> *listArray;
-
-
-@property (nonatomic, copy) NSString *arrowImgViewName;
 
 /// 一些控件属性
 @property (nonatomic, strong) UIFont *font;
-
 @property (nonatomic, strong) UIColor *textColor;
-
 @property (nonatomic, assign) NSTextAlignment textAlignment;
-
 @property (nonatomic, copy) NSString *placeholder;
 
 @property (nonatomic, copy, readonly) NSString *text;
 
 
 - (void)show;
-
 - (void)close;
 
 @end
