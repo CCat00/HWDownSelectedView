@@ -1,4 +1,4 @@
-HWDownSelectedTF
+HWDownSelectedView
 ==============
 
 HWDownSelectedView 是一个简单的下拉选择控件。
