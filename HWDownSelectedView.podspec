@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HWDownSelectedView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "下拉选择框"
 
   # This description is used to generate tags and improve search results.
@@ -25,8 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                   *这是描述1
-                   *这是描述2
+                   *点击输入框可弹出下拉选择内容
                    DESC
 
   s.homepage     = "https://github.com/Hanwp/HWDownSelectedTF"
@@ -40,8 +39,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "LICENSE" }
+  # s.license      = "MIT"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -82,7 +81,7 @@ Pod::Spec.new do |s|
   #
 
   #s.source       = { :git => "https://github.com/Hanwp/HWDownSelectedTF.git", :tag => "#{s.version}" }
-  s.source       = { :git => "https://github.com/Hanwp/HWDownSelectedTF.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/Hanwp/HWDownSelectedTF.git", :tag => "1.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -106,8 +105,8 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  # s.resource  = "icon.png"
-  s.resources = "Resources/*.png"
+  #s.resource  = "HWDownSelectedTF/Resources/arrow_up@2x.png"
+  s.resources = "HWDownSelectedTF/Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
