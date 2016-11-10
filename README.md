@@ -7,7 +7,7 @@ HWDownSelectedView 是一个简单的下拉选择控件。
 ==============
 查看并运行 `HWDownSelectedTF.xcodeproj`
 
-![效果图](https://github.com/Hanwp/HWDownSelectedTF/blob/master/选择框gif.gif)
+![效果图](https://github.com/Hanwp/HWDownSelectedView/blob/master/Demo/选择框gif.gif)
 
 
 安装
