@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		683AFE6B1DD4211B007E4547 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE681DD4211B007E4547 /* arrow_up@2x.png */; };
 		683AFE6C1DD4211B007E4547 /* HWDownSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE6A1DD4211B007E4547 /* HWDownSelectedView.m */; };
 		683AFE791DD42124007E4547 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE6F1DD42124007E4547 /* AppDelegate.m */; };
 		683AFE7A1DD42124007E4547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE701DD42124007E4547 /* Assets.xcassets */; };
@@ -17,10 +16,10 @@
 		683AFE7E1DD42124007E4547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE761DD42124007E4547 /* main.m */; };
 		683AFE7F1DD42124007E4547 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE781DD42124007E4547 /* ViewController.m */; };
 		683AFE811DD42131007E4547 /* 选择框gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE801DD42131007E4547 /* 选择框gif.gif */; };
+		683AFEA71DD4578F007E4547 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 683AFEA61DD4578F007E4547 /* arrow_up@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		683AFE681DD4211B007E4547 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
 		683AFE691DD4211B007E4547 /* HWDownSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDownSelectedView.h; sourceTree = "<group>"; };
 		683AFE6A1DD4211B007E4547 /* HWDownSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDownSelectedView.m; sourceTree = "<group>"; };
 		683AFE6E1DD42124007E4547 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		683AFE771DD42124007E4547 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		683AFE781DD42124007E4547 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		683AFE801DD42131007E4547 /* 选择框gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "选择框gif.gif"; sourceTree = "<group>"; };
+		683AFEA61DD4578F007E4547 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
 		68C582D71C2003C800A1F776 /* HWDownSelectedTF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWDownSelectedTF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,7 +50,7 @@
 		683AFE671DD4211B007E4547 /* HWDownSelectedTF */ = {
 			isa = PBXGroup;
 			children = (
-				683AFE681DD4211B007E4547 /* arrow_up@2x.png */,
+				683AFEA51DD4578F007E4547 /* Resources */,
 				683AFE691DD4211B007E4547 /* HWDownSelectedView.h */,
 				683AFE6A1DD4211B007E4547 /* HWDownSelectedView.m */,
 			);
@@ -71,6 +71,14 @@
 				683AFE781DD42124007E4547 /* ViewController.m */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		683AFEA51DD4578F007E4547 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				683AFEA61DD4578F007E4547 /* arrow_up@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		68C582CE1C2003C800A1F776 = {
@@ -150,8 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				683AFE7B1DD42124007E4547 /* LaunchScreen.storyboard in Resources */,
+				683AFEA71DD4578F007E4547 /* arrow_up@2x.png in Resources */,
 				683AFE811DD42131007E4547 /* 选择框gif.gif in Resources */,
-				683AFE6B1DD4211B007E4547 /* arrow_up@2x.png in Resources */,
 				683AFE7A1DD42124007E4547 /* Assets.xcassets in Resources */,
 				683AFE7C1DD42124007E4547 /* Main.storyboard in Resources */,
 				683AFE7D1DD42124007E4547 /* Info.plist in Resources */,
