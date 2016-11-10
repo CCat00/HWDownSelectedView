@@ -24,7 +24,10 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "下拉选择框。"
+  s.description  = <<-DESC
+                   *这是描述1
+                   *这是描述2
+                   DESC
 
   s.homepage     = "https://github.com/Hanwp/HWDownSelectedTF"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -89,8 +92,7 @@ Pod::Spec.new do |s|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
-  s.source_files  = "HWDownSelectedTF", "HWDownSelectedTF/**/*.{h,m}"
+  s.source_files  = "HWDownSelectedTF/**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
