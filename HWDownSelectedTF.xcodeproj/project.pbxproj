@@ -7,32 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		68C582DC1C2003C800A1F776 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C582DB1C2003C800A1F776 /* main.m */; };
-		68C582DF1C2003C800A1F776 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C582DE1C2003C800A1F776 /* AppDelegate.m */; };
-		68C582E21C2003C800A1F776 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C582E11C2003C800A1F776 /* ViewController.m */; };
-		68C582E51C2003C800A1F776 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C582E31C2003C800A1F776 /* Main.storyboard */; };
-		68C582E71C2003C800A1F776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C582E61C2003C800A1F776 /* Assets.xcassets */; };
-		68C582EA1C2003C800A1F776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C582E81C2003C800A1F776 /* LaunchScreen.storyboard */; };
-		68C582F61C20050100A1F776 /* HWDownSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C582F51C20050100A1F776 /* HWDownSelectedView.m */; };
-		68CCD4C81DD2D1F5004AF803 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68CCD4C71DD2D1F5004AF803 /* arrow_up@2x.png */; };
-		68E6383A1DD3309600B123A6 /* 选择框gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68E638391DD3309600B123A6 /* 选择框gif.gif */; };
+		683AFE6B1DD4211B007E4547 /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE681DD4211B007E4547 /* arrow_up@2x.png */; };
+		683AFE6C1DD4211B007E4547 /* HWDownSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE6A1DD4211B007E4547 /* HWDownSelectedView.m */; };
+		683AFE791DD42124007E4547 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE6F1DD42124007E4547 /* AppDelegate.m */; };
+		683AFE7A1DD42124007E4547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE701DD42124007E4547 /* Assets.xcassets */; };
+		683AFE7B1DD42124007E4547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE711DD42124007E4547 /* LaunchScreen.storyboard */; };
+		683AFE7C1DD42124007E4547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE731DD42124007E4547 /* Main.storyboard */; };
+		683AFE7D1DD42124007E4547 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE751DD42124007E4547 /* Info.plist */; };
+		683AFE7E1DD42124007E4547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE761DD42124007E4547 /* main.m */; };
+		683AFE7F1DD42124007E4547 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 683AFE781DD42124007E4547 /* ViewController.m */; };
+		683AFE811DD42131007E4547 /* 选择框gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 683AFE801DD42131007E4547 /* 选择框gif.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		683AFE681DD4211B007E4547 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
+		683AFE691DD4211B007E4547 /* HWDownSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDownSelectedView.h; sourceTree = "<group>"; };
+		683AFE6A1DD4211B007E4547 /* HWDownSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDownSelectedView.m; sourceTree = "<group>"; };
+		683AFE6E1DD42124007E4547 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		683AFE6F1DD42124007E4547 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		683AFE701DD42124007E4547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		683AFE721DD42124007E4547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		683AFE741DD42124007E4547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		683AFE751DD42124007E4547 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		683AFE761DD42124007E4547 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		683AFE771DD42124007E4547 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		683AFE781DD42124007E4547 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		683AFE801DD42131007E4547 /* 选择框gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "选择框gif.gif"; sourceTree = "<group>"; };
 		68C582D71C2003C800A1F776 /* HWDownSelectedTF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWDownSelectedTF.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		68C582DB1C2003C800A1F776 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		68C582DD1C2003C800A1F776 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		68C582DE1C2003C800A1F776 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		68C582E01C2003C800A1F776 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		68C582E11C2003C800A1F776 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		68C582E41C2003C800A1F776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		68C582E61C2003C800A1F776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		68C582E91C2003C800A1F776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		68C582EB1C2003C800A1F776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68C582F41C20050100A1F776 /* HWDownSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDownSelectedView.h; sourceTree = "<group>"; };
-		68C582F51C20050100A1F776 /* HWDownSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDownSelectedView.m; sourceTree = "<group>"; };
-		68CCD4C71DD2D1F5004AF803 /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_up@2x.png"; sourceTree = "<group>"; };
-		68E638391DD3309600B123A6 /* 选择框gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "选择框gif.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +47,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		683AFE671DD4211B007E4547 /* HWDownSelectedTF */ = {
+			isa = PBXGroup;
+			children = (
+				683AFE681DD4211B007E4547 /* arrow_up@2x.png */,
+				683AFE691DD4211B007E4547 /* HWDownSelectedView.h */,
+				683AFE6A1DD4211B007E4547 /* HWDownSelectedView.m */,
+			);
+			path = HWDownSelectedTF;
+			sourceTree = "<group>";
+		};
+		683AFE6D1DD42124007E4547 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				683AFE6E1DD42124007E4547 /* AppDelegate.h */,
+				683AFE6F1DD42124007E4547 /* AppDelegate.m */,
+				683AFE701DD42124007E4547 /* Assets.xcassets */,
+				683AFE711DD42124007E4547 /* LaunchScreen.storyboard */,
+				683AFE731DD42124007E4547 /* Main.storyboard */,
+				683AFE751DD42124007E4547 /* Info.plist */,
+				683AFE761DD42124007E4547 /* main.m */,
+				683AFE771DD42124007E4547 /* ViewController.h */,
+				683AFE781DD42124007E4547 /* ViewController.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		68C582CE1C2003C800A1F776 = {
 			isa = PBXGroup;
 			children = (
-				68C582D91C2003C800A1F776 /* HWDownSelectedTF */,
+				683AFE801DD42131007E4547 /* 选择框gif.gif */,
+				683AFE6D1DD42124007E4547 /* Demo */,
+				683AFE671DD4211B007E4547 /* HWDownSelectedTF */,
 				68C582D81C2003C800A1F776 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,34 +89,6 @@
 				68C582D71C2003C800A1F776 /* HWDownSelectedTF.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		68C582D91C2003C800A1F776 /* HWDownSelectedTF */ = {
-			isa = PBXGroup;
-			children = (
-				68E638391DD3309600B123A6 /* 选择框gif.gif */,
-				68CCD4C71DD2D1F5004AF803 /* arrow_up@2x.png */,
-				68C582F41C20050100A1F776 /* HWDownSelectedView.h */,
-				68C582F51C20050100A1F776 /* HWDownSelectedView.m */,
-				68C582DD1C2003C800A1F776 /* AppDelegate.h */,
-				68C582DE1C2003C800A1F776 /* AppDelegate.m */,
-				68C582E01C2003C800A1F776 /* ViewController.h */,
-				68C582E11C2003C800A1F776 /* ViewController.m */,
-				68C582E31C2003C800A1F776 /* Main.storyboard */,
-				68C582E61C2003C800A1F776 /* Assets.xcassets */,
-				68C582E81C2003C800A1F776 /* LaunchScreen.storyboard */,
-				68C582EB1C2003C800A1F776 /* Info.plist */,
-				68C582DA1C2003C800A1F776 /* Supporting Files */,
-			);
-			path = HWDownSelectedTF;
-			sourceTree = "<group>";
-		};
-		68C582DA1C2003C800A1F776 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				68C582DB1C2003C800A1F776 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,11 +149,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68CCD4C81DD2D1F5004AF803 /* arrow_up@2x.png in Resources */,
-				68C582EA1C2003C800A1F776 /* LaunchScreen.storyboard in Resources */,
-				68C582E71C2003C800A1F776 /* Assets.xcassets in Resources */,
-				68C582E51C2003C800A1F776 /* Main.storyboard in Resources */,
-				68E6383A1DD3309600B123A6 /* 选择框gif.gif in Resources */,
+				683AFE7B1DD42124007E4547 /* LaunchScreen.storyboard in Resources */,
+				683AFE811DD42131007E4547 /* 选择框gif.gif in Resources */,
+				683AFE6B1DD4211B007E4547 /* arrow_up@2x.png in Resources */,
+				683AFE7A1DD42124007E4547 /* Assets.xcassets in Resources */,
+				683AFE7C1DD42124007E4547 /* Main.storyboard in Resources */,
+				683AFE7D1DD42124007E4547 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,30 +165,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68C582E21C2003C800A1F776 /* ViewController.m in Sources */,
-				68C582F61C20050100A1F776 /* HWDownSelectedView.m in Sources */,
-				68C582DF1C2003C800A1F776 /* AppDelegate.m in Sources */,
-				68C582DC1C2003C800A1F776 /* main.m in Sources */,
+				683AFE6C1DD4211B007E4547 /* HWDownSelectedView.m in Sources */,
+				683AFE7F1DD42124007E4547 /* ViewController.m in Sources */,
+				683AFE791DD42124007E4547 /* AppDelegate.m in Sources */,
+				683AFE7E1DD42124007E4547 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		68C582E31C2003C800A1F776 /* Main.storyboard */ = {
+		683AFE711DD42124007E4547 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				68C582E41C2003C800A1F776 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		68C582E81C2003C800A1F776 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				68C582E91C2003C800A1F776 /* Base */,
+				683AFE721DD42124007E4547 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		683AFE731DD42124007E4547 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				683AFE741DD42124007E4547 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -276,7 +278,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HWDownSelectedTF/Info.plist;
+				CLANG_OPTIMIZATION_PROFILE_FILE = "$(SRCROOT)/OptimizationProfiles/$(PROJECT_NAME).profdata";
+				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andlisoft.HWDownSelectedTF;
@@ -288,7 +291,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HWDownSelectedTF/Info.plist;
+				CLANG_OPTIMIZATION_PROFILE_FILE = "$(SRCROOT)/OptimizationProfiles/$(PROJECT_NAME).profdata";
+				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andlisoft.HWDownSelectedTF;
