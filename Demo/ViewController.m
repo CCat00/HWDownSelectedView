@@ -26,7 +26,7 @@
     _ageBox.listArray = @[@"22", @"23", @"24", @"25", @"26"];
     
     _sexBox.placeholder = @"性别选择";
-    _sexBox.listArray = @[@"男", @"女"];
+    _sexBox.listArray =  @[@"男", @"女"];
 
     
     HWDownSelectedView *down = [HWDownSelectedView new];
